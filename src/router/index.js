@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import About from '@/pages/About'
 import BelajarProps from '@/pages/BelajarProps'
 import LearnAPI from '@/pages/LearnAPI'
+import Loop from '@/pages/Loop'
+import LearnVuex from '@/pages/LearnVuex'
 
 Vue.use(Router)
 
@@ -32,6 +34,18 @@ export default new Router({
       path: '/learn-api',
       name: 'LearnAPI',
       component: LearnAPI
+    },
+
+    {
+      path: '/loop',
+      name: 'loop',
+      component: Loop
+    },
+
+    {
+      path: '/learn-vuex',
+      name: 'learnvuex',
+      component: LearnVuex
     }
   ]
 })

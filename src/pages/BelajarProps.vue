@@ -1,24 +1,37 @@
-<<template>
-  <ChildComponent>
+<template>
+<div class="probs-and-event">
+    <div>
+        {{dataParent}}
+    </div>
+    <input type="text" v-model="dataParent">
 
-  </ChildComponent>
+    <!-- child component uses parent data -->
+    <ChildComponent :someProps="dataParent" @clickMe="someMethod">
+
+    </ChildComponent>
+</div>
 
 </template>
 
 <script>
 import ChildComponent from '@/components/ChildComponent'
+
 export default {
     name: 'BelajarProps',
     component: (ChildComponent),
-
     data () {
         return {
-            dataParent: ''
+            dataParent: 'I am parent'
         }
     },
     methods: {
-        clickMe () {
-
+        someMethod (param) {
+            alert(param)
+        }
+    },
+    watch: {
+        dataParent: function () {
+            console.log(this.dataParent)
         }
     }
   

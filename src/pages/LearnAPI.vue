@@ -1,6 +1,11 @@
 <template>
   <div>
       Hey, I'm API!
+      <ul>
+              <li v-for="film in films" :key="film.id">
+                  {{film.title}} {{film.release_date}}
+              </li>
+      </ul>
       <button @click="callApi">Call API</button>
   </div>
 </template>
@@ -12,7 +17,7 @@ export default {
     name: 'LearnAPI',
     data () {
         return {
-
+            films: []
         }
     },
     methods: {
@@ -23,6 +28,7 @@ export default {
             axios.get(URL)
             .then(response => {
                 console.log('Hi', response)
+                this.films = response.data
             })
             .catch(error => {
                 console.log(error)

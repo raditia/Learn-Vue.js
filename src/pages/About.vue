@@ -4,7 +4,7 @@
       <input type="text" v-model="dataA">
       <!-- <h2><a href="http://github.com/raditia" target="_blank">{{ msg }}</a></h2> -->
       <!-- <h1>Data: {{ dataA }}</h1> -->
-      <h1>Hello,  {{ dataB }}!</h1>
+      <h1 v-if="dataB !=''">Hello,  {{ dataB }}!</h1>
   </div>
 
 </template>
